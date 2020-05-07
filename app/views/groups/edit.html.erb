@@ -1,6 +1,16 @@
 <div class="col-md-5 col-md-offset-5xe">
   <h2>新增討論版</h2>
 
+  <% if @group.errors.any? %>
+    <ul>
+    <% @group.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+
+      <% end %>
+    </ul>
+  <% end %>
+
+
     <hr>
     <%= form_for @group do |f| %>
 
